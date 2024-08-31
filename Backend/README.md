@@ -1,4 +1,4 @@
-# QuickTalk Chat App Frontend
+# QuickTalk Chat App Backend
 
 Welcome to the QuickTalk Chat App! This is a React-based chat application that allows users to communicate in real-time.
 
@@ -15,7 +15,7 @@ Before you begin, make sure you have the following installed:
 
    ```bash
    git clone git@github.com:dev-skjena/quicktalk.git
-   cd quicktalk/Frontend
+   cd quicktalk/Backend
 
    ```
 
@@ -29,6 +29,6 @@ Before you begin, make sure you have the following installed:
 3. **To start the development server and run the app use**
 
    ```bash
-   npm run dev
+   npm start
 
    ```
