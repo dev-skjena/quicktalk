@@ -14,8 +14,7 @@ const ChatUser = () => {
         </div>
 
         <div>
-          {/* <h1 className="text-xl">{selectedConversation.name}</h1> */}
-          <h1 className="text-xl">Santosh Jena</h1>
+          <h1 className="text-xl">{selectedConversation.name}</h1>
           <span className="text-sm">Online</span>
         </div>
       </div>
