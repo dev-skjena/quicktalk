@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const [authUser, setAuthUser] = useAuth();
@@ -33,14 +34,14 @@ const Signup = () => {
       .then((res) => {
         console.log(res.data);
         if (res) {
-          alert("SignUp successfully! You can now login.");
+          toast.success("SignUp successfully! You can now login.");
         }
         localStorage.setItem("messenger", JSON.stringify(res.data));
         setAuthUser(res.data);
       })
       .catch((err) => {
         if (err.response) {
-          alert("Error:" + err.response.data.message);
+          toast.error("Error:" + err.response.data.message);
         }
       });
   };
