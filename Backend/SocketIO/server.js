@@ -11,9 +11,18 @@ const io = new Server(server, {
   },
 });
 
+const users = {};
+
 io.on("connection", (socket) => {
   console.log("New client connected", socket.id);
+  const userId = socket.handshake.query.userId;
 
+  if (userId) {
+    users[userId] = socket.id;
+    console.log(users);
+  }
+
+  io.emit("getOnline", Object.keys(users));
   //   socket.on("joinRoom", (room) => {
   //     socket.join(room);
   //     console.log(`User joined room:${room}`);
@@ -21,6 +30,8 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("Client disconnected", socket.id);
+    delete users[userId];
+    io.emit("getOnline", Object.keys(users));
   });
 });
 
