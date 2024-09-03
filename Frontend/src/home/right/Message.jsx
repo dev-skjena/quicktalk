@@ -18,8 +18,8 @@ const Message = ({ message }) => {
         <div className={`chat ${chatName}`}>
           <div className={`chat-bubble text-white ${chatColor}`}>
             {message.message}{" "}
-            <div>{formattedTime}</div>
           </div>
+          <div className="chat-footer">{formattedTime}</div>
         </div>
       </div>
     </>
