@@ -22,7 +22,9 @@ const Messages = () => {
       ) : (
         messages.length > 0 &&
         messages.map((message) => (
-          <Message key={message._id} message={message} />
+          <div key={message._id} ref={lastMessageRef}>
+            <Message message={message} />
+          </div>
         ))
       )}
       <div style={{ minHeight: "calc(92vh - 8vh)" }}>
