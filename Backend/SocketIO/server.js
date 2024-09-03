@@ -18,7 +18,7 @@ export const getReceiverSocketId = (receiverId) => {
 const users = {};
 
 io.on("connection", (socket) => {
-  console.log("New client connected", socket.id);
+  // console.log("New client connected", socket.id);
   const userId = socket.handshake.query.userId;
 
   if (userId) {
@@ -27,13 +27,9 @@ io.on("connection", (socket) => {
   }
 
   io.emit("getOnline", Object.keys(users));
-  //   socket.on("joinRoom", (room) => {
-  //     socket.join(room);
-  //     console.log(`User joined room:${room}`);
-  //   });
 
   socket.on("disconnect", () => {
-    console.log("Client disconnected", socket.id);
+    // console.log("Client disconnected", socket.id);
     delete users[userId];
     io.emit("getOnline", Object.keys(users));
   });

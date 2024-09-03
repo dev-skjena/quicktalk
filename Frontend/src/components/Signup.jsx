@@ -32,7 +32,6 @@ const Signup = () => {
     await axios
       .post("/api/user/signup", userInfo)
       .then((res) => {
-        console.log(res.data);
         if (res) {
           toast.success("SignUp successfully! You can now login.");
         }
